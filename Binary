@@ -13,6 +13,10 @@
 
 #余数指整数除法中被除数未被除尽部分，且余数的取值范围为0到除数之间（不包括除数）的整数。若被除数<除数，余数是被除数，商为0。
 
+#Add Binary
+#Given two binary strings, return their sum (also a binary string).
+#The input strings are both non-empty and contains only characters 1 or 0.
+
 #思路： 从最低位加到最高位，当前位：当前位+进位和%2，进位：当前位和/2，添加最后一次的进位，反向输出字符。
 
 def addBinary(a, b):
