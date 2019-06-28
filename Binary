@@ -13,4 +13,21 @@
 
 #余数指整数除法中被除数未被除尽部分，且余数的取值范围为0到除数之间（不包括除数）的整数。若被除数<除数，余数是被除数，商为0。
 
-#思路： 从最低位加到最高位，当前位：当前位和%2，进位：当前位和/2，记得处理每一次的进位和最后一次的进位，最后反向输出字符。
+#思路： 从最低位加到最高位，当前位：当前位+进位和%2，进位：当前位和/2，添加最后一次的进位，反向输出字符。
+
+def addBinary(a, b):
+    carry = 0
+    str_a = str(a)
+    str_b = str(b)
+    str_result = []
+    if (len(str_a) > 0) and (len(str_b) > 0):
+        for i in range(len(str_a),0,-1):
+            sum = (int(str_a[i-1]) + int(str_b[i-1]) + int(carry)) % 2
+            carry = int((int(str_a[i-1]) + int(str_b[i-1])) / 2)
+            str_result.append(str(sum))
+        str_result.append(str(carry))     
+    print (str_result)       
+    print ("".join(list(reversed(str_result))))
+    
+
+addBinary(10,11)
