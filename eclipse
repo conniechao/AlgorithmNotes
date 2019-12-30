@@ -1,0 +1,6 @@
+1.	eclipse启动时弹出Failed to create the Java Virtual Machine
+计算机的内存不足
+修改eclipse的配置文件 
+..\eclipse\eclipse.ini
+-Xms256m  
+-Xmx1024m
